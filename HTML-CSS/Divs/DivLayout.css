@@ -1,0 +1,43 @@
+div#contaner {
+    border: 1px solid;
+}
+div#headerSection {
+    background: black;
+    height: 80px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
+div#parent {
+    overflow: auto;
+}
+div#listDiv {
+    width: 300px;
+    background: gray;
+    margin-left: 10px;
+    float: left;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+li {
+    line-height: 1.7;
+}
+.contantDiv {
+    float: right;
+    width: 608px;
+    margin: 0 10px 10px 10px;
+}
+.contantDiv {
+    float: right;
+    width: 618px;
+    margin: 0 10px 10px 10px;
+}
+div#footer {
+    background: black;
+    height: 50px;
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
