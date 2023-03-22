@@ -41,3 +41,17 @@ div#footer {
     text-align: center;
     margin: 10px;
 }
+@media only screen and (max-width:800){
+    .contantDiv{
+        width: 80%;
+        padding: 0;
+    }
+    #listDiv{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:500){
+    .contantDiv,#footer,#listDiv,#headerSection{
+        width: 100%;
+    }
+}
