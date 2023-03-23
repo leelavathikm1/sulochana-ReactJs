@@ -1,0 +1,62 @@
+*{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+}
+.wraper-row1 {
+    background: #302e2e;
+    color: white;
+}header {
+    width: 800px;
+    margin: auto;
+    overflow: auto;
+}div#logo {
+    width: 300px;
+    float: left;
+    margin-top: 20px;
+}
+#logo h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 21px;
+}
+#logo p {
+    margin: 0;
+    font-size: 13px;
+}
+nav {
+    width: 450px;
+    float: right;
+    background: black;
+    margin: 25px 0px;
+}
+nav ul {
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+div#imageSection {
+    width: 800px;
+    margin: auto;
+}
+#imageSection img {
+    width: 800px;
+}
+div#smallImageSec {
+    margin: auto;
+    width: 800px;
+    overflow: auto;
+}
+.child {
+    width: 262px;
+    float: left;
+}
+figure {
+    width: 260px;
+    margin-left: 0;
+}
+figure img {
+    border: 1px solid gray;
+    padding: 4px;
+}
