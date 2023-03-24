@@ -60,3 +60,50 @@ figure img {
     border: 1px solid gray;
     padding: 4px;
 }
+div#midSection {
+    width: 800px;
+    margin: 0 auto;
+}
+div#contantSec {
+    width: 390px;
+    float: left;
+}
+div#contantImg {
+    width: 390px;
+    float: right;
+    height: 250px;
+}
+div#contantSec {
+    width: 390px;
+    float: left;
+    height: 250px;
+}
+#contantImg img {
+    height: 170px;
+}
+div#sectionParent {
+    background: gray;
+    overflow: hidden;
+    width: 100%;
+}
+div#linkSection {
+    margin: 0 auto;
+    width: 800px;
+}
+section {
+    width: 190px;
+    float: left;
+}
+section ul {
+    padding: 0;
+    list-style-type: none;
+}
+section ul li {
+    line-height: 1.6;
+    border-bottom: 1px solid;
+    margin-right: 12px;
+}
+section ul li a {
+    text-decoration: none;
+    color: orange;
+}
