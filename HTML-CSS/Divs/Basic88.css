@@ -107,3 +107,18 @@ section ul li a {
     text-decoration: none;
     color: orange;
 }
+div#footerScetion {
+    background: black;
+    color: white;
+    height: 50px;
+}
+footer {
+    margin: auto;
+    width: 800px;
+}
+p#rightPara {
+    float: right;
+}
+p#leftPara {
+    float: left;
+}
