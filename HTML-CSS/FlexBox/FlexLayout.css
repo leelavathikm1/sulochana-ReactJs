@@ -1,0 +1,44 @@
+*{
+    margin: 2px;
+}
+body{
+    font-size: 25px;
+    color: white;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+.flex-header{
+    background-color: aqua;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.flex-main{
+display: flex;
+flex: 1rem;
+}
+
+.flex-nav{
+    background-color: rgb(211, 10, 184);
+    padding-top: 3rem;
+    flex: 1 1 5rem;
+}
+
+.flex-article{
+    background-color: rgb(60, 202, 17);
+    padding-top: 3rem;
+    flex: 1 1 5rem;
+}
+.flex-aside{
+    background-color: rgb(220, 80, 80);
+    padding-top: 3rem;
+    flex: 1 1 5rem;
+}
+
+.flex-footer{
+    background-color: rgb(214, 15, 177);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

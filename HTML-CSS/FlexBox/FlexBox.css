@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+.container{
+    border: 5px solid;
+    display: flex;
+/* display: inline-flex; */
+/* flex-direction: row-reverse; */
+/* flex-direction: column; */
+/* justify-content: space-between; */
+align-items: baseline;
+}
+.flexDiv{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+#div1{
+    background-color: aqua;
+}
+#div2{
+    background-color: rgb(124, 36, 36);
+}
+#div3{
+    background-color: rgb(116, 34, 120);
+}
+#div4{
+    background-color: rgb(210, 213, 14);
+}
+#div5{
+    background-color: rgb(194, 98, 15);
+}
+#div6{
+    background-color: rgb(9, 219, 37);
+}
+#div7{
+    background-color: rgb(97, 11, 173);
+}
+#div8{
+    background-color: rgb(215, 14, 191);
+}
+#div9{
+    background-color: rgb(206, 12, 31);
+}
