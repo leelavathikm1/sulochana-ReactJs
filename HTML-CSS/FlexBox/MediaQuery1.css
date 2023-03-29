@@ -1,0 +1,60 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: aqua;
+    color: red;
+    padding: 20px;
+    text-align: center;
+}
+nav{
+    background-color: blueviolet;
+    padding: 10px;
+    
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: yellow;
+}
+/* nav ul li {
+    mar
+} */
+section{
+    text-align: center;
+    padding: 10px;
+}
+footer{
+    background-color: aqua;
+    padding: 10px;
+    text-align: center;
+}
+/* Media Query for responsive Layout */
+
+@media only screen and(max-width:600px){
+    header{
+        padding: 10px;
+        font-size: 1.2em;
+    }
+    nav{
+        flex-direction: column;
+    }
+    nav ul li{
+        margin: 5px 0;
+    }
+    section{
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    footer{
+        padding: 5px;
+        font-size: 0.8em;
+    }
+}
