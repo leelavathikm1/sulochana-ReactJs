@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: relative;
+      }
+      .gray-Box {
+        position: relative;
+        border: 2px solid;
+        height: 100px;
+        margin: 25px;
+        background-color: gray;
+        z-index: 1;
+      }
+      .blueBox {
+        position: absolute;
+        height: 60px;
+        width: 70px;
+        background-color: blue;
+        left: 50px;
+        top: 50px;
+        z-index: 2;
+      }
+      .green-Box {
+        z-index: 3;
+        height: 100px;
+        width: 35%;
+        background-color: green;
+        position: absolute;
+        top: 15px;
+        left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Z-Index</h2>
+    <p>
+      An Element with greater order is always above an element with a lower
+      stack order
+    </p>
+    <div class="container">
+      <div class="gray-Box">Gray Box (Z-Index :1)</div>
+      <div class="blueBox">Blue-Box (Z-Index:2)</div>
+      <div class="green-Box">green-Box (Z-Index:3)</div>
+    </div>
+  </body>
+</html>
