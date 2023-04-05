@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div></div>
+    <h2>Hello Javascript</h2>
+    <p id="myPara"></p>
+    <!--  Link the javascript file -->
+    <script src="./intro.js"></script>
+
+    <script>
+      document.getElementById("demo").innerHTML = "Welcome to JavaScript";
+      document.querySelector("h2").innerHTML = "Hello JS Iam Replaseced";
+      document.querySelector("div").setAttribute("class", "demo1");
+      document.querySelector("h2").style.color = "red";
+
+      var myHeading = document.createElement("h1");
+      //   document.body.appendChild(myHeading);
+      document.querySelector("div").appendChild(myHeading);
+      myHeading.innerText = "Iam Created Dynamicaly";
+      myHeading.style.backgroundColor = "yellow";
+
+      //  How many ways we can display messages in browser
+      document.write("Iam From Display message");
+      console.log("Hello Iam From Console");
+      document.getElementById("myPara").innerHTML = "Iam From Display contant";
+
+      //   PopUp-Boxes
+      alert("Iam From alert Box");
+      prompt("Do You want to enter into page");
+      confirm("Conform yes or no");
+    </script>
+  </body>
+</html>
