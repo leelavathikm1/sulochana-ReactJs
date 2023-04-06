@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Javascript object is a data structure that can store properties and methods
+    it is essentially a coolection of keys and values -->
+
+    <ul id="myUl"></ul>
+    <script>
+      var person = {}; // empty object
+
+      //Creating an Object
+      var mobile = {
+        name: "LG Mobile",
+        price: 5000,
+        mode: "Online",
+        address: "Bangalore",
+      };
+
+      //Add Properties to an object in two ways
+
+      mobile.pixels = "40px"; // adding property with . Notation
+
+      mobile["display"] = "4K display"; //adding property with array bracket [] Notation
+
+      //In 4Ways we can display an object
+      console.log(mobile.name, mobile.price);
+
+      document.write(
+        mobile.name +
+          "<br>" +
+          mobile.price +
+          "<br>" +
+          mobile.mode +
+          "<br>" +
+          mobile.address +
+          "<br>" +
+          mobile.pixels +
+          "<br>" +
+          mobile.display
+      );
+
+      document.getElementById("myUl").innerHTML =
+        mobile.name +
+        "<br>" +
+        mobile.price +
+        "<br>" +
+        mobile.mode +
+        "<br>" +
+        mobile.address +
+        "<br>";
+      mobile.pixels;
+    </script>
+  </body>
+</html>
