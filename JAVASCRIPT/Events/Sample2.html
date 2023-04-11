@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="demo"></div> -->
+    <input type="text" id="fname" onchange="myName()" />
+    <br />
+    <input type="text" onkeypress="myKeypres()" />
+    <br /><br />
+    <input type="text" onkeydown="mykeyDown(this)" />
+    <br /><br />
+    <!-- <input type="text" onmouseover="mouseOver()" onmouseout="mouseOut()" /> -->
+
+    <h2 id="overOnMe" onmouseover="mouseOver()" onmouseout="mouseOut()">
+      MouseOver On Me
+    </h2>
+
+    <button onclick="addNumbers()" type="button">AddNumbers</button>
+
+    <script>
+      // var a
+      //   function addNumbers(a, b) {
+      //     return a * b;
+      //   }
+      //   document.getElementById("demo").innerHTML = addNumbers(6, 7);
+      //OnChange
+
+      function myName() {
+        let name = document.getElementById("fname");
+        name.value = name.value.toUpperCase();
+      }
+
+      //OnkeyPress
+
+      function myKeypres() {
+        alert("you have pressed a key iside the input field");
+      }
+
+      //   onkeyDown
+
+      function mykeyDown(element) {
+        element.style.backgroundColor = "blue";
+      }
+
+      //OnmouseOver , Onmouseout
+
+      function mouseOver() {
+        document.getElementById("overOnMe").style.color = "blue";
+      }
+
+      function mouseOut() {
+        document.getElementById("overOnMe").style.backgroundColor = "red";
+      }
+    </script>
+  </body>
+</html>
