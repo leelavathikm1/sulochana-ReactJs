@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. Named function
+      //   function myNamed() {
+      //     console.log("Iam From Named Function");
+      //     document.write("Iam From Named Function");
+      //   }
+      //   myNamed();
+
+      //Type 2. Ananymous Function
+      //   var hiAnanymous = function () {
+      //     console.log("Iam From Ananymous Function");
+      //   };
+      //   hiAnanymous();
+
+      //Type 3. Named function Where assigned to a variable
+
+      var nameAssigned = function assigned() {
+        console.log("Named function Where assigned to a variable");
+      };
+      nameAssigned();
+
+      // Arrow Functions or Fat arrow Functions
+
+      //   let hiArrowFunc = () => {
+      //     console.log("Iam From Arrow Function");
+      //   };
+      //   hiArrowFunc();
+
+      //ES5 Method
+      //Type 5. Self Invoking function
+
+      //   (function () {
+      //     console.log("Iam From Self Invoking Function");
+      //   })();
+
+      //Es6 Method
+      // Type 6. Immidiately Invoking Function
+      (() => {
+        console.log("Immidiately Invoking Function");
+      })();
+    </script>
+  </body>
+</html>

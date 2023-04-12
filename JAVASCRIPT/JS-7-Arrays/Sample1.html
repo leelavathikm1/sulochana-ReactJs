@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="demo"></ul>
+    <script>
+      var cars = []; //Creating an empty array
+      var cars = ["vovlo", "Mahindra", "Toyota", "Maruti", "Ford", "Kia"]; //Crated an Array
+
+      //Array Methods
+      cars.push("MG"); //The push method will add a value at the end of an array
+      cars.unshift("BMW"); //Unshift method will add a value at the bigning of an array
+      cars.pop(); //pop method will remove a value at the end of an array
+      cars.shift(); // shift method will reve a value at bigining of an array
+      cars.splice(2, 0, "Audi"); //splice method will add and remove an array value at the given index position
+      //   cars.sort();
+      cars.reverse();
+
+      //For Loop
+      for (i = 0; i < cars.length; i++) {
+        console.log(cars);
+        document.write(cars);
+      }
+
+      console.log(cars);
+      document.write(cars);
+      //   document.getElementById("demo").innerHTML = cars + "<br>";
+    </script>
+  </body>
+</html>
