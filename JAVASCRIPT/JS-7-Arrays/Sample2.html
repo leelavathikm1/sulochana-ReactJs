@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var cars = ["vovlo", "Mahindra", "Toyota", "Maruti", "Ford", "Kia"]; //Crated an Array
+
+      //   cars.slice(1);
+
+      //Find method
+      //   var dispCars = cars.find(function (results) {
+      //     return results.length == 5;
+      //   });
+
+      //Filter Method
+
+      //   var numbers = [20, 22, 30, 40, 35, 17, 16, 18];
+      //   document.getElementById("demo").innerHTML = numbers.filter(dispNums);
+      //   document.write(numbers);
+      //   function dispNums(val) {
+      //     return val <= 18;
+      //   }
+
+      //   ForEach()
+
+      //   var results = "";
+      //   cars.forEach(function (dispCar) {
+      //     // document.write(dispCar + "<br>");
+      //     results += dispCar;
+      //   });
+      //   document.getElementById("demo").innerHTML = results;
+
+      //Map Method()
+
+      var myCars = cars.map((val) => {
+        return val;
+      });
+      console.log(myCars);
+
+      document.write(myCars + "<br>");
+
+      //   Reduce()
+
+      var numbers = [20, 22, 30, 40, 35, 17, 16, 18];
+      const sum = numbers.reduce((dispNum, add) => {
+        return dispNum + add;
+      });
+
+      let roundSum = Math.round(sum + 100);
+      console.log(roundSum);
+      //   function dispNum(val, num) {
+      //     return val + math.round(num);
+      //     console.log(dispNum);
+      //   }
+      //   console.log(dispNums);
+      //   document.write(dispNums);
+    </script>
+  </body>
+</html>
