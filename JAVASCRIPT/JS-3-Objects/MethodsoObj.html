@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myObj = {
+        name: "Sulochan",
+        age: 37,
+        hobbies: ["Reading", "Coocking", "Coading"],
+        hello: function () {
+          console.log("Iam From Object Method");
+        },
+      };
+      myObj.hello();
+      console.log(myObj.name);
+
+      //2.Object Constructor method
+
+      //   let person = new Object();
+
+      //   person.name = "Leela";
+      //   person.age = 40;
+
+      //   console.log(person);
+
+      //Factory Function one of the object creation
+
+      //   function newPerson(name, age) {
+      //     return {
+      //       name: name,
+      //       age: age,
+      //     };
+      //   }
+      //   let person = newPerson("Gayathri", 12);
+
+      //   console.log(newPerson.person);
+
+      // Constructor Function
+      function person1(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      let myPerson = new person1("Murali", 42);
+
+      console.log(myPerson);
+
+      //Object.keys method
+
+      //   let student = {
+      //     name: "Krishna",
+      //     age: 38,
+      //   };
+
+      //   let props;
+    </script>
+  </body>
+</html>
