@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="myHeading"></h2>
+    <h4 class="myh4"></h4>
+    <h4 class="myh4"></h4>
+    <h3>heading-1</h3>
+    <h3>Iam From Dom querySelector-2</h3>
+    <h3>heading-3</h3>
+    <h5></h5>
+
+    <p name="para"></p>
+    <p name="para"></p>
+    <p name="para"></p>
+
+    <script>
+      //   console.log(
+      //     (document.getElementById("myHeading").innerHTML =
+      //       "Iam From DOM Heading")
+      //   );
+      document.getElementById("myHeading").innerHTML = "Iam From DOM Heading";
+      document.getElementsByClassName("myh4")[1].innerHTML =
+        "Iam From DOM CLASS";
+      //   document.querySelector("h3").innerText = "Iam From Dom querySelector";
+      document.querySelectorAll("h3")[1].style.color = "red";
+      document.getElementsByTagName("h5")[0].innerText = "Iam From DOM TagNAme";
+      document.getElementsByName("para")[1].innerText =
+        "Iam From getElementsByName ";
+    </script>
+  </body>
+</html>
