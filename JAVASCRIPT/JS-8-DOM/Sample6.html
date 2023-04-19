@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Gender</label>
+    <input type="radio" name="gender" value="male" />Male <br />
+    <input type="radio" name="gender" value="female" />Female
+
+    <br /><br />
+    <label for="">Checkbox</label>
+    <input type="checkbox" name="car" value="audi" />Audi <br />
+    <input type="checkbox" name="car" value="maruti" />maruti <br />
+    <input type="checkbox" name="car" value="bmw" />BMW <br />
+    <input type="checkbox" name="car" value="renault" />Renault <br />
+    <input type="checkbox" name="car" value="mahindra" />Mahindra <br />
+    <br />
+    <button type="button" onclick="getPersonDetails()">Get Person</button>
+
+    <script>
+      function getPersonDetails() {
+        var person = {
+          gender: "",
+          cars: [],
+        };
+        var allRadioBtns = document.getElementsByName("gender");
+        allRadioBtns.forEach((selectedVal) => {
+          if (selectedVal.checked == true) {
+            person.gender = selectedVal.value;
+          }
+        });
+
+        var allCheckboxes = document.getElementsByName("car");
+        allCheckboxes.forEach((checkedVal) => {
+          if (checkedVal.checked == true) {
+            person.cars.push(checkedVal.value);
+          }
+        });
+        console.log(person.gender);
+        console.log(person.cars);
+      }
+    </script>
+  </body>
+</html>

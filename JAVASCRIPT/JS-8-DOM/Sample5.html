@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Name</label>
+      <input type="text" id="name" />
+      <br />
+      <label for="">Age</label>
+      <input type="number" id="age" />
+      <br />
+      <label for="">plase</label>
+      <input type="text" id="plase" />
+      <br />
+      <label for="">Mobile</label>
+      <input type="number" name="" id="mobile" />
+      <br />
+      <button type="button" onclick="myForm()">Submit</button>
+    </form>
+    <script>
+      function myForm() {
+        var myName = document.querySelector("input").value;
+        var myAge = document.getElementById("age").value;
+        var myPlase = document.getElementById("plase").value;
+        var myMobile = document.getElementById("mobile").value;
+
+        // var myDetails = {
+        //   myName: myName,
+        //   myAge: myAge,
+        //   myPlase: myPlase,
+        //   myMobile: myMobile,
+        // };
+
+        // var myDetails = {
+        //   myName,
+        //   myAge,
+        //   myPlase,
+        //   myMobile,
+        // };
+
+        var myDetails = {
+          name: "",
+          age: "",
+          plase: "",
+          mobile: "",
+        };
+
+        for (a in myDetails) {
+          myDetails[a] = document.getElementById(a).value;
+        }
+        console.log(myDetails);
+      }
+    </script>
+  </body>
+</html>

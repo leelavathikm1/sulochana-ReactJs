@@ -11,15 +11,19 @@
     <ul id="myUl"></ul>
 
     <script>
-         var myDiv = document.createElement("div");
-         //   document.body.appendChild(myDiv);
+      var myDiv = document.createElement("div");
+      //   document.body.appendChild(myDiv);
       //    document.getElementById("myUl").appendChild(myDiv);
 
-         for(1=0;i<=10;i++){
-        var myLi=document.createElement("li")
-        document.getElementById("myUl").appendChild(myLi)
+      for (i = 0; i <= 10; i++) {
+        var myLi = document.createElement("li");
+        myLi.innerText = "MYLINK";
+        document.getElementById("myUl").appendChild(myLi);
+      }
 
-         }
+      for (i = 2; i < 100; i += 2) {
+        document.write(i + "<br>");
+      }
     </script>
   </body>
 </html>
