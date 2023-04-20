@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dispTables {
+        border: 1px solid;
+        padding: 10px;
+        float: left;
+        margin: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tableDiv"></div>
+    <script>
+      for (i = 2; i <= 10; i++) {
+        var myDiv = document.createElement("div");
+        myDiv.setAttribute("class", dispTables);
+        var myTables = "";
+        for (j = 1; j <= 10; j++) {
+          //   document.write(i + " = " + j + " * " + i * j + "<br>");
+          myTables = myTables + i + " = " + j + " * " + i * j + "<br>";
+          //   myDiv.innerHTML = myTables;
+          myDiv.innerHTML = myTables;
+        }
+        document.getElementById("tableDiv").appendChild(myDiv);
+      }
+
+      //   <div id="myTableDivs"></div>
+      // <script>
+      //   //   var targetNum = prompt("Enter Number");
+      //   for (i = 2; i <= 20; i++) {
+      //     var mydiv = document.createElement("div");
+      //     mydiv.setAttribute("class", "tableDiv");
+      //     var results = "";
+      //     for (j = 1; j <= 10; j++) {
+      //       results = results + i + " = " + j + " X " + i * j + "<br>";
+      //       // document.write(i + " = " + j + " X " + i * j + "<br>");
+      //       mydiv.innerHTML = results;
+      //     }
+      //     document.getElementById("myTableDivs").appendChild(mydiv);
+      //   }
+    </script>
+  </body>
+</html>
