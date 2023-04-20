@@ -6,44 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .dispTables {
-        border: 1px solid;
-        padding: 10px;
+      .myClass {
+        border: 2px solid blue;
+        margin: 5px;
+        padding: 5px;
         float: left;
-        margin: 2px;
       }
     </style>
   </head>
   <body>
-    <div id="tableDiv"></div>
+    <div id="tablesDiv"></div>
     <script>
-      for (i = 2; i <= 10; i++) {
+      for (i = 2; i <= 100; i++) {
         var myDiv = document.createElement("div");
-        myDiv.setAttribute("class", dispTables);
-        var myTables = "";
+        myDiv.setAttribute("class", "myClass");
+        var dispTables = "";
         for (j = 1; j <= 10; j++) {
-          //   document.write(i + " = " + j + " * " + i * j + "<br>");
-          myTables = myTables + i + " = " + j + " * " + i * j + "<br>";
-          //   myDiv.innerHTML = myTables;
-          myDiv.innerHTML = myTables;
-        }
-        document.getElementById("tableDiv").appendChild(myDiv);
-      }
+          dispTables = dispTables + i + " x " + j + " = " + i * j + "<br>";
 
-      //   <div id="myTableDivs"></div>
-      // <script>
-      //   //   var targetNum = prompt("Enter Number");
-      //   for (i = 2; i <= 20; i++) {
-      //     var mydiv = document.createElement("div");
-      //     mydiv.setAttribute("class", "tableDiv");
-      //     var results = "";
-      //     for (j = 1; j <= 10; j++) {
-      //       results = results + i + " = " + j + " X " + i * j + "<br>";
-      //       // document.write(i + " = " + j + " X " + i * j + "<br>");
-      //       mydiv.innerHTML = results;
-      //     }
-      //     document.getElementById("myTableDivs").appendChild(mydiv);
-      //   }
+          myDiv.innerHTML = dispTables;
+        }
+        document.getElementById("tablesDiv").appendChild(myDiv);
+        // console.log(dispTables);
+      }
+      // document.getElementById("tablesDiv").innerHTML = myDiv;
     </script>
   </body>
 </html>

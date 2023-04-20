@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Enter First Name</label>
+      <input type="text" id="fName" onkeyup="validateNames()" /> <br /><br />
+      <label for="">Enter Last Name </label>
+      <input type="text" id="lName" onkeyup="validateNames()" /> <br /><br />
+      <h4 style="color: red">Please Enter 6 Charecters</h4>
+      <button disabled>Display</button>
+    </form>
+
+    <script>
+      function validateNames() {
+        var fName = document.getElementById("fName").value;
+        var lName = document.getElementById("lName").value;
+
+        if (fName.length >= 6 && lName.length >= 6) {
+          document.querySelector("h4").style.display = "none";
+          document.querySelector("button").removeAttribute("disabled");
+        } else {
+          document.querySelector("h4").style.display = "block";
+          document.querySelector("button").setAttribute("disabled", true);
+        }
+      }
+    </script>
+  </body>
+</html>
