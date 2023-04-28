@@ -1,4 +1,10 @@
-var users = [];
+var users = JSON.parse(localStorage.getItem(users));
+var index;
+if (users == null) {
+  users = [];
+}
+
+// var users = [];
 
 function getValues() {
   var person = {
@@ -14,6 +20,7 @@ function getValues() {
   }
 
   users.push(person);
+  localStorage.setItem("users", JSON.stringify(users));
   displayDta(users);
   clearForm(person);
 
@@ -68,6 +75,7 @@ function udateUser() {
     person[a] = document.getElementById(a).value;
   }
   users[index] = person;
+  localStorage.setItem("users", JSON.stringify(users));
   displayDta(users);
   clearForm(person);
   document.getElementById("addUser").style.display = "block";
@@ -76,6 +84,7 @@ function udateUser() {
 
 function deleteUser(i) {
   users = users.filter((usr, index) => index !== i);
+  localStorage.setItem("users", JSON.stringify(users));
   displayDta(users);
 }
 function clearForm(person) {
