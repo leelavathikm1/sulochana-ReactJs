@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="fName">FirstName </label>
+      <input type="text" id="fName" />
+      <br />
+      <label for="eMail">Enter EMail </label>
+      <input type="email" id="eMail" /><br />
+      <input type="text" id="id" hidden />
+      <br />
+      <button type="button" onclick="addUser()" id="addUserBtn">addUser</button>
+      <button
+        type="button"
+        onclick="updateUser()"
+        id="updateUserBtn"
+        style="display: none"
+      >
+        UpdateUser
+      </button>
+      <br /><br />
+      <hr />
+      <label for="search">Search Here</label>
+      <input type="text" name="" id="userSearch" onkeyup="searcUers()" />
+    </form>
+
+    <br /><br />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>Email</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+
+    <script>
+      var allUsers = [];
+      var index = 0;
+      function addUser() {
+        var user = {
+          fName: "",
+          eMail: "",
+          id: "",
+        };
+
+        for (a in user) {
+          user[a] = document.getElementById(a).value;
+        }
+        console.log(user);
+        var postData = new XMLHttpRequest();
+        postData.onreadystatechange = function () {
+          if (postData.readyState == 4 && postData.status == 201) {
+            console.log("user added sussessfully");
+            getDataFromServer();
+          }
+        };
+
+        postData.open("POST", "http://localhost:3000/users");
+        postData.setRequestHeader("Content-Type", "application/json");
+        postData.send(JSON.stringify(user));
+      }
+
+      function getDataFromServer() {
+        var getUsers = new XMLHttpRequest();
+        getUsers.onreadystatechange = function () {
+          if (getUsers.readyState == 4 && getUsers.status == 200) {
+            console.log("users", JSON.parse(getUsers.response));
+            allUsers = JSON.parse(getUsers.response);
+            displayUsers(JSON.parse(getUsers.response));
+          }
+        };
+
+        getUsers.open("GET", "http://localhost:3000/users");
+        getUsers.send();
+      }
+
+      function displayUsers(users) {
+        document.getElementById("myTable").innerHTML = "";
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+
+          var editTd = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "Edit";
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
+          editTd.appendChild(editBtn);
+          myTr.appendChild(editTd);
+
+          var delTd = document.createElement("td");
+          var delBtn = document.createElement("button");
+          delBtn.innerHTML = "Delete";
+          delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          delTd.appendChild(delBtn);
+          myTr.appendChild(delTd);
+
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+
+      function deleteUser(i) {
+        console.log(allUsers[i]);
+        var delUser = new XMLHttpRequest();
+        delUser.onreadystatechange = function () {
+          if (delUser.readyState == 4 && delUser.status == 200) {
+            getDataFromServer();
+          }
+        };
+
+        delUser.open("DELETE", "http://localhost:3000/users/" + allUsers[i].id);
+        delUser.send();
+      }
+
+      function editUser(i) {
+        index = i;
+        for (a in allUsers[i]) {
+          document.getElementById(a).value = allUsers[i][a];
+        }
+        document.getElementById("addUserBtn").style.display = "none";
+        document.getElementById("updateUserBtn").style.display = "block";
+      }
+
+      function updateUser() {
+        var user = {
+          fName: "",
+          eMail: "",
+          id: "",
+        };
+
+        for (a in user) {
+          user[a] = document.getElementById(a).value;
+        }
+
+        var updateNew = new XMLHttpRequest();
+        updateNew.onreadystatechange = function () {
+          if (updateNew.readyState == 4 && updateNew.status == 200) {
+            getDataFromServer();
+          }
+        };
+        updateNew.open(
+          "PUT",
+          "http://localhost:3000/users/" + allUsers[index].id
+        );
+        updateNew.setRequestHeader("Content-Type", "application/json");
+        updateNew.send(JSON.stringify(user));
+
+        document.getElementById("addUserBtn").style.display = "block";
+        document.getElementById("updateUserBtn").style.display = "none";
+      }
+      getDataFromServer();
+
+      function searcUers() {
+        var enteredletters = document.getElementById("userSearch").value;
+        var filteredUser = allUsers.filter((val) => {
+          var check = false;
+          for (a in val) {
+            if (a != "id") {
+              if (
+                val[a]
+                  .toLocaleLowerCase()
+                  .indexOf(enteredletters.toLocaleLowerCase()) > -1
+              ) {
+                check = true;
+              }
+            }
+          }
+          if (check) {
+            return val;
+          }
+        });
+        displayUsers(filteredUser);
+      }
+      //       http://filltext.com/?rows=20&fname={firstName}&lname={lastName}
+      // fname,lname,telephone,address,city,state,zip
+      // id,email,username,password
+    </script>
+  </body>
+</html>

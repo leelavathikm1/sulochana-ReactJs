@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>Email</th>
+          <th>Id</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!-- AJAX standa for Asynchronous Javascript and XML -->
+    <!-- XMLHttpRequest this is tha object to communicate with servers -->
+
+    <!-- 4 steps of AJAX Request -->
+    <!-- A client event occurs
+    the XMLHttpRequest object is created -->
+    <button type="button" onclick="getUsers()">getUsers</button>
+
+    <script>
+      // XMLHttpRequest is used to get the data from server
+      var allUsers = [];
+      var index = 0;
+      function getUsers() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            console.log(getInfo.response);
+            allUsers = JSON.parse(getInfo.response);
+            displayData(allUsers);
+          }
+        };
+
+        // getInfo.open(
+        //   "GET",
+        //   "http://www.filltext.com/?rows=10&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true"
+        // );
+        getInfo.open("GET", "http://localhost:3000/users");
+
+        getInfo.send();
+      }
+      function displayData(allUsers) {
+        allUsers.forEach((user) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var employees = [
+        {
+          username: "Hema",
+          salary: 50000,
+          age: 40,
+          email: "mm@gmai.com",
+        },
+        {
+          username: "ss",
+          salary: 60000,
+          age: 44,
+          email: "ss@gmai.com",
+        },
+        {
+          username: "Hema",
+          salary: 50000,
+          age: 40,
+          email: "mm@gmai.com",
+        },
+        {
+          username: "kk",
+          salary: 40000,
+          age: 42,
+          email: "kk@gmai.com",
+        },
+      ];
+
+      function removeDuplicates(employees, props) {
+        return employees.filter((obj, index, array) => {
+          return (
+            index ==
+            array.findIndex((o) => {
+              return props.every((prop) => o[prop] === obj[prop]);
+            })
+          );
+        });
+      }
+
+      var result = removeDuplicates(employees, Object.keys(employees[0]));
+      console.log(result);
+      //   var uniqueArray = employees.filter((obj, index, arr) => {
+      //     return (
+      //       index ==
+      //       employees.findIndex((o) => {
+      //         return o.username == obj.username && o.salary == obj.salary && o.age == obj.age
+      //       })
+      //     );
+      //   });
+
+      //   console.log(uniqueArray);
+      //   employees.sort((a, b) => a.username.localeCompare(b.username));
+      //   console.log(employees);
+    </script>
+  </body>
+</html>
